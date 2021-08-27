@@ -1,0 +1,57 @@
+algoritmo percentualAdicional;
+// Síntese inserir o valores do produto em reais, o valor do frete em reais e a região para onde o produto será despachado.
+//  Objetivo:  calcular o valor final do produto.
+//  Entrada : valor do produto, frete e região.
+//  Saída   : valor total.
+
+
+principal
+// Declarações
+    texto R;
+    real VP, F,FT, VF, SE, S, CO, NE, N;
+    
+    // Instruções
+
+    SE= 1.01;
+    S=1.02;
+    CO=1.05;
+    NE=1.07;
+    N=1.1;
+
+    escreval("Escreva o valor do produto: ");
+    escreva("R$: ");
+    leia(VP);
+    escreval("Digite o valor do frete:" );
+    escreva("R$: ");
+    leia(F);
+    escreval("Digite sua região(em maiúsculo): ");
+    leia(R);
+
+
+    se (comparaTexto(R,"SUDESTE") == 0) entao
+        FT=F*SE;
+    senao
+        se  (comparaTexto(R,"SUL")== 0) entao
+            FT=F*S;
+        senao
+            se  (comparaTexto(R,"CENTRO-OESTE")== 0) entao
+                FT=F*CO;
+            senao
+                se  (comparaTexto(R,"NORDESTE")== 0) entao
+                    FT=F*NE;
+                senao
+                    se  (comparaTexto(R,"NORTE")== 0) entao
+                        FT=F*N;
+                    senao
+                        escreval("ERRO!!");
+                    fimSe
+                fimSe
+            fimSe
+        fimSe
+    fimSe
+
+
+
+    VF= (VP+FT);
+    escreval("VALOR FINAL = ", VF::2);
+fimPrincipal

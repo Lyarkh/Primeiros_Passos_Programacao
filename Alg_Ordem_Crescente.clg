@@ -1,0 +1,48 @@
+algoritmo semNome;
+// Síntese
+//  Objetivo:  
+//  Entrada :
+//  Saída   :
+
+
+principal
+	// Declarações
+ inteiro num[4], i, i2, ip,im, list;
+ 
+	// Instruções
+para (i de 0 ate 3 passo 1) faca
+	escreval("Digite um numero: ");
+	leia(num[i]);
+fimPara
+
+escreval("------------------");
+
+para (i de 0 ate 3 passo 1) faca
+escreval(num[i]);
+fimPara
+
+
+i2=0;
+ip=1;
+para (i de 0 ate 3 passo 1) faca
+	im= ip;
+	para (i2 de (ip+1) ate 3 passo 1) faca
+		se (num[i2] < num[im]) entao
+			im = i2;
+		fimSe
+	fimPara
+	list = num[im];
+	num[im] = num[ip];
+	num[ip] = list;
+fimPara
+
+escreval(" Ordem crescente: ");
+escreval("------------------");
+para (i de 0 ate 3 passo 1) faca
+escreval(num[i]);
+fimPara
+
+escreval("------------------");
+fimPrincipal
+
+ 
