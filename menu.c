@@ -49,27 +49,27 @@ void opcao_00(){
 }
 
 void opcao_01(){
-    printf("Testando Opcao 01\n")
+    printf("Testando Opcao 01\n");
 }
 
 void opcao_02(){
-    printf("Testando Opcao 02\n")
+    printf("Testando Opcao 02\n");
 }
 
 void opcao_03(){
-    printf("Testando Opcao 03\n")
+    printf("Testando Opcao 03\n");
 }
 
 void opcao_04(){
-    printf("Testando Opcao 04\n")
+    printf("Testando Opcao 04\n");
 }
 
 void opcao_05(){
-    printf("Testando Opcao 05\n")
+    printf("Testando Opcao 05\n");
 }
 
 void opcao_06(){
-    printf("Testando Opcao 06\n")
+    printf("Testando Opcao 06\n");
 }
 
 
