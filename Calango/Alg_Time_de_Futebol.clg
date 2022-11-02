@@ -1,0 +1,49 @@
+algoritmo timeFutebol;
+// Síntese fazer um algortimo que receba a idade, o peso e a altura de cada um dos jogadores.
+//  Objetivo: calcular e mostrar quantos jogadores tem menos de 18 anos, a média de peso dos jogadores e o percentual de jogadores com menos de 1.70.
+//  Entrada : idade do jogador, peso do jogador, altura do jogador.
+//  Saída   : jogadores com menos de 18 anos, peso medio dos jogadores e percentual com menos de 1.70m.
+
+principal
+	// Declarações
+	inteiro i, idade, menores18;
+	real peso, peso_media, peso_total;
+	real altura, menor_170, percentual_170;
+
+
+	// Instruções
+
+	menores18=0;
+	peso_total=0;
+	menor_170=0;
+
+	para (i de 1 ate 11 passo 1) faca
+		escreval("Digite a idade do jogador:");
+		leia(idade);
+		escreval("Digite o peso do jogador:");
+		leia(peso);
+		escreval("Digite a altura do jogador(m):");
+		leia(altura); 
+
+		se (idade <18) entao
+			menores18= menores18+1;
+			//Não da para somar vazio com alguma coisa, se <18 não fosse igual a zero você não conseguiria somar.
+		senao
+		fimSe
+
+		peso_total=peso_total+peso;
+
+		se (altura <1.70) entao
+			menor_170= menor_170+1;
+		senao
+		fimSe
+	fimPara
+
+	percentual_170=((menor_170*100)/11);
+
+	escreval("JOGADORES COM MENOS DE 18 ANOS = ", menores18);
+	escreval("PESO MEDIO DOS JOGADORES = ", (peso_total/11)::2);
+	escreval("PERCENTUAL COM MENOS DE 1.70m = ", percentual_170::2, "%");
+
+
+fimPrincipal

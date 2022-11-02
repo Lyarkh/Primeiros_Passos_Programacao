@@ -1,0 +1,62 @@
+algoritmo semNome;
+// Síntese
+//  Objetivo:  
+//  Entrada :
+//  Saída   :
+
+
+principal
+	// Declarações
+	
+inteiro n, a, b, c, max, num;
+real nota[6];
+texto nome[6], pal;
+
+	// Instruções
+
+leia(n);
+escreval("------------------");
+
+para (a de 0 ate n -1 passo 1) faca
+	escreval("nome: ");
+	leia(nome[a]);
+	escreval("nota: ");
+	leia(nota[a]);
+fimPara
+
+escreval("------------------");
+
+para (a de 0 ate n -1 passo 1) faca
+	escreval(nome[a]);
+	escreval(nota[a]);
+fimPara
+
+escreval("------------------");
+
+//Ordenação Notas
+
+para (a de 0 ate n-1 passo 1) faca
+	max = a;
+	para (b de a+1 ate n-1 passo 1) faca
+		se (nota[max] < nota[b]) entao  
+			max = b;
+		fimSe
+	fimPara
+	num = nota[a];
+	nota[a] = nota[max];
+	nota[max] = num;
+
+// Colocando nome ordenado por nota
+	pal = nome[a];
+	nome[a] = nome[max];
+	nome[max] = pal;
+	
+fimPara
+escreval("------------------");
+
+para (a de 0 ate n -1 passo 1) faca
+	escreva(a,"- ");
+	escreval(nome[a]);
+fimPara
+	
+fimPrincipal

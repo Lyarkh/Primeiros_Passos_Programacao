@@ -1,0 +1,86 @@
+algoritmo Conta_Restaurante_Ex;
+// Síntese:	Codigo criado para calcular qual será o valor da conta no  restaurante,considerando a quantidade homens e mulheres e quantidade de bebida q tomaram
+//  Objetivo:  
+//  Entrada :
+//  Saída   :
+
+
+principal
+	// Declarações
+inteiro amg, ht, mt, contador, beb, bebt;
+real vt;
+caracter sex;
+
+	// Instruções
+
+escreval("-----------------");
+escreval("Conta Restaurante");
+escreval("-----------------");
+escreval("Quantas pessoas são? ");
+leia(amg);
+ se (amg <=0) entao
+ 	escreval("ERRO!!");
+ senao
+ fimSe
+ 
+ht=0;
+mt=0;
+bebt=0;
+beb=0;
+
+para (contador de 1 ate amg passo 1) faca
+	escreval("Qual o sexo? (H)  (M) ");
+	leiaCaracter(sex);
+	escreval ("Quantas bebidas ele bebeu? ");
+	leia(beb);
+	bebt= bebt + beb;
+	escreval("-----------------");
+	escreval("proximo: ");
+
+	escolha(sex)
+		caso 'H'
+		caso 'h'
+			ht= ht+1;
+			interrompa;
+		caso 'M'
+		caso 'm'
+			mt= mt+1;
+			interrompa;
+	fimEscolha	
+fimPara
+
+escolha (mt)
+	caso 0
+		interrompa;
+	caso 1
+		escreval(mt, " mulher no total");
+		interrompa;
+	outroCaso
+		escreval (mt, " mulheres no total.");
+		interrompa;
+fimEscolha
+
+escolha (ht)
+	caso 0
+		interrompa;
+	caso 1
+		escreval(ht, " homem no total");
+		interrompa;
+	outroCaso
+		escreval (ht, " homens no total.");
+		interrompa;
+fimEscolha
+
+escreval("-----------------");
+escreval("beberam ",bebt, " bebidas no total.");
+
+// No valor total será acrescida 10% que é referente a taxa de serviço do garçom
+// Para isso será feito o calculo vt(valor total) + 10% 
+// vt=100% ------> 100% +10% = 110% ------> 110%=110/100 ------> 110%= 1.1x ------> vt*1.1= valor total com acrescimo de 10%
+
+vt= ((ht*39.9)+(mt*34.9)+(bebt*4.5))*1.1;
+escreval("-----------------");
+escreval( "VALOR TOTAL = R$ ", vt::2);
+escreval("-----------------");
+
+ fimPrincipal
